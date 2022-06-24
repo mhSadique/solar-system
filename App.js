@@ -1,8 +1,10 @@
-import { StyleSheet, View, Image, Pressable } from 'react-native';
-import { spacing } from './src/theme/spacing';
+import { View } from 'react-native';
 import { useFonts } from 'expo-font';
-import { typography } from './src/theme/typography';
 import Text from './src/components/text/text';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [loaded] = useFonts({
@@ -15,11 +17,17 @@ export default function App() {
     return <Text >Font is loading......</Text>
   }
 
+  const HomeScreen = () => {
+    return (
+      <Text>Home Screen</Text>
+    );
+  }
+
   return (
-    <View style={{ backgroundColor: 'black', flex: 1 }}>
-      <Text preset='h1'>
-        Open up App.js to start
-      </Text>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name='Home' component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
