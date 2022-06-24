@@ -1,7 +1,8 @@
-import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
+import { StyleSheet, View, Image, Pressable } from 'react-native';
 import { spacing } from './src/theme/spacing';
 import { useFonts } from 'expo-font';
 import { typography } from './src/theme/typography';
+import Text from './src/components/text/text';
 
 export default function App() {
   const [loaded] = useFonts({
@@ -11,16 +12,12 @@ export default function App() {
   });
 
   if (!loaded) {
-    return <Text>Font is loading...</Text>
+    return <Text >Font is loading......</Text>
   }
 
   return (
-    <View>
-      <Text style={{
-        marginTop: spacing[8],
-        fontFamily: typography.primary,
-        fontSize: 30
-      }}>
+    <View style={{ backgroundColor: 'black', flex: 1 }}>
+      <Text preset='h1'>
         Open up App.js to start
       </Text>
     </View>
