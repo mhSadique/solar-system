@@ -5,6 +5,7 @@ const Text = ({ children, preset = "default", style }) => {
     const textStyles = StyleSheet.compose(presets[preset], style);
     return (
         <RNText style={textStyles}>
+            {/* <RNText> */}
             {children}
         </RNText>
     );

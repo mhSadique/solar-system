@@ -3,6 +3,7 @@ import { useFonts } from 'expo-font';
 import Text from './src/components/text/text';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Home from './src/screens/home'
 
 const Stack = createNativeStackNavigator();
 
@@ -17,16 +18,10 @@ export default function App() {
     return <Text >Font is loading......</Text>
   }
 
-  const HomeScreen = () => {
-    return (
-      <Text>Home Screen</Text>
-    );
-  }
-
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name='Home' component={HomeScreen} />
+        <Stack.Screen name='Home' component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
   );
