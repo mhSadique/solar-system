@@ -1,4 +1,4 @@
-import { Button, StyleSheet, FlatList, View } from "react-native";
+import { Button, StyleSheet, FlatList, View, Pressable } from "react-native";
 import PlanetHeader from "../components/planet-header";
 import Text from "../components/text/text";
 import { SafeAreaView } from 'react-native-safe-area-context'
@@ -17,13 +17,16 @@ const Home = ({ navigation }) => {
                 data={PLANET_LIST}
                 keyExtractor={item => item.name}
                 renderItem={({ item }) => (
-                    <View style={styles.item}>
+                    <Pressable
+                        onPress={() => navigation.navigate('Details')}
+                        style={styles.item}
+                    >
                         <View style={styles.imageTextContainer}>
                             <View style={[styles.circle, { backgroundColor: item.color }]} />
                             <Text preset="h3" style={styles.itemName}>{item.name}</Text>
                         </View>
                         <AntDesign name="right" size={24} color={colors.white} />
-                    </View>
+                    </Pressable>
                 )}
             />
         </SafeAreaView>

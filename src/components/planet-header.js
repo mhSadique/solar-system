@@ -1,12 +1,23 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import { colors } from '../theme/colors';
 import { spacing } from '../theme/spacing';
 import Text from './text/text';
+import { Ionicons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
-const PlanetHeader = () => {
+const PlanetHeader = ({ backBtn }) => {
+    const navigation = useNavigation();
     return (
         <View style={styles.container}>
+            {backBtn && (
+                <Pressable
+                    onPress={() => navigation.goBack()}
+                    style={styles.backBtn}
+                >
+                    <Ionicons name="chevron-back-sharp" size={24} color="white" />
+                </Pressable>
+            )}
             <Text preset='h2'>The Planets</Text>
         </View>
     );
@@ -18,6 +29,11 @@ const styles = StyleSheet.create({
     container: {
         padding: spacing[6],
         borderBottomWidth: 0.5,
-        borderBottomColor: colors.white
+        borderBottomColor: colors.white,
+        flexDirection: 'row',
+        alignItems: 'center'
+    },
+    backBtn: {
+        marginRight: spacing[4]
     }
 })
