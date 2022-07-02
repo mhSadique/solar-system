@@ -16,9 +16,9 @@ const Home = ({ navigation }) => {
                 contentContainerStyle={styles.list}
                 data={PLANET_LIST}
                 keyExtractor={item => item.name}
-                renderItem={({ item }) => (
+                renderItem={({ item, index }) => (
                     <Pressable
-                        onPress={() => navigation.navigate('Details')}
+                        onPress={() => navigation.navigate('Details', { planetIndex: index })}
                         style={styles.item}
                     >
                         <View style={styles.imageTextContainer}>
