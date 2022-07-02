@@ -16,7 +16,7 @@ export default PlanetHeader;
 
 const styles = StyleSheet.create({
     container: {
-        padding: spacing[7],
+        padding: spacing[6],
         borderBottomWidth: 0.5,
         borderBottomColor: colors.white
     }

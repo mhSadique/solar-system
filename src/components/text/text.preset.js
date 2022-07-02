@@ -31,7 +31,7 @@ export const presets = {
     },
     h3: {
         ...BASE_BOLD,
-        fontSize: 28
+        fontSize: 24
     },
     h4: {
         ...BASE_BOLD,
