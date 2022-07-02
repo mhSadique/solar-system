@@ -22,6 +22,7 @@ const Details = ({ route }) => {
                 <Text> Wikilink: {wikiLink}</Text>
                 <Text> Description: {description}</Text>
                 <Text> Surface: {surface}</Text>
+                <Text> Structure: {structure}</Text>
             </View>
         </SafeAreaView>
     );
