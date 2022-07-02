@@ -6,7 +6,7 @@ import Text from './text/text';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
-const PlanetHeader = ({ backBtn }) => {
+const PlanetHeader = ({ backBtn, title = "The Planets" }) => {
     const navigation = useNavigation();
     return (
         <View style={styles.container}>
@@ -18,7 +18,7 @@ const PlanetHeader = ({ backBtn }) => {
                     <Ionicons name="chevron-back-sharp" size={24} color="white" />
                 </Pressable>
             )}
-            <Text preset='h2'>The Planets</Text>
+            <Text preset='h2'>{title}</Text>
         </View>
     );
 };
