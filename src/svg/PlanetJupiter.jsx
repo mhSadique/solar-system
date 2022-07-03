@@ -1,23 +1,11 @@
-import * as React from "react"
-import Svg, { SvgProps, Circle, Mask, G, Path } from "react-native-svg"
+import * as React from "react";
+import Svg, { SvgProps, Circle, Mask, G, Path } from "react-native-svg";
 
-function SvgComponent(props: SvgProps) {
+function SvgComponent(props) {
   return (
-    <Svg
-      width={300}
-      height={300}
-      viewBox="0 0 582 582"
-      fill="none"
-      {...props}
-    >
+    <Svg width={300} height={300} viewBox="0 0 582 582" fill="none" {...props}>
       <Circle cx={291} cy={291} r={291} fill="#ECAD7A" />
-      <Mask
-        id="prefix__a"
-        x={0}
-        y={0}
-        width={582}
-        height={582}
-      >
+      <Mask id="prefix__a" x={0} y={0} width={582} height={582}>
         <Circle cx={291} cy={291} r={291} fill="#fff" />
       </Mask>
       <G mask="url(#prefix__a)">
@@ -28,13 +16,7 @@ function SvgComponent(props: SvgProps) {
           fill="#F0D29F"
         />
       </G>
-      <Mask
-        id="prefix__b"
-        x={0}
-        y={0}
-        width={582}
-        height={582}
-      >
+      <Mask id="prefix__b" x={0} y={0} width={582} height={582}>
         <Circle cx={291} cy={291} r={291} fill="#fff" />
       </Mask>
       <G mask="url(#prefix__b)">
@@ -43,13 +25,7 @@ function SvgComponent(props: SvgProps) {
           fill="#D86534"
         />
       </G>
-      <Mask
-        id="prefix__c"
-        x={0}
-        y={0}
-        width={582}
-        height={582}
-      >
+      <Mask id="prefix__c" x={0} y={0} width={582} height={582}>
         <Circle cx={291} cy={291} r={291} fill="#fff" />
       </Mask>
       <G mask="url(#prefix__c)">
@@ -60,13 +36,7 @@ function SvgComponent(props: SvgProps) {
           fill="#DC8E61"
         />
       </G>
-      <Mask
-        id="prefix__d"
-        x={0}
-        y={0}
-        width={582}
-        height={582}
-      >
+      <Mask id="prefix__d" x={0} y={0} width={582} height={582}>
         <Circle cx={291} cy={291} r={291} fill="#fff" />
       </Mask>
       <G mask="url(#prefix__d)">
@@ -77,13 +47,7 @@ function SvgComponent(props: SvgProps) {
           fill="#D89D6D"
         />
       </G>
-      <Mask
-        id="prefix__e"
-        x={0}
-        y={0}
-        width={582}
-        height={582}
-      >
+      <Mask id="prefix__e" x={0} y={0} width={582} height={582}>
         <Circle cx={291} cy={291} r={291} fill="#fff" />
       </Mask>
       <G mask="url(#prefix__e)">
@@ -94,20 +58,14 @@ function SvgComponent(props: SvgProps) {
           fill="#D89D6D"
         />
       </G>
-      <Mask
-        id="prefix__f"
-        x={0}
-        y={0}
-        width={582}
-        height={582}
-      >
+      <Mask id="prefix__f" x={0} y={0} width={582} height={582}>
         <Circle cx={291} cy={291} r={291} fill="#fff" />
       </Mask>
       <G mask="url(#prefix__f)">
         <Path opacity={0.078} fill="#000" d="M291 0h292v582H291z" />
       </G>
     </Svg>
-  )
+  );
 }
 
-export default SvgComponent
+export default SvgComponent;

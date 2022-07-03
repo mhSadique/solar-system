@@ -1,15 +1,9 @@
-import * as React from "react"
-import Svg, { SvgProps, Path, Circle, Mask, G } from "react-native-svg"
+import * as React from "react";
+import Svg, { SvgProps, Path, Circle, Mask, G } from "react-native-svg";
 
-function SvgComponent(props: SvgProps) {
+function SvgComponent(props) {
   return (
-    <Svg
-      width={300}
-      height={300}
-      viewBox="0 0 668 668"
-      fill="none"
-      {...props}
-    >
+    <Svg width={300} height={300} viewBox="0 0 668 668" fill="none" {...props}>
       <Path
         fillRule="evenodd"
         clipRule="evenodd"
@@ -17,13 +11,7 @@ function SvgComponent(props: SvgProps) {
         fill="#B87D43"
       />
       <Circle cx={334} cy={318} r={208} fill="#FCCB6B" />
-      <Mask
-        id="prefix__a"
-        x={126}
-        y={110}
-        width={416}
-        height={416}
-      >
+      <Mask id="prefix__a" x={126} y={110} width={416} height={416}>
         <Circle cx={334} cy={318} r={208} fill="#fff" />
       </Mask>
       <G mask="url(#prefix__a)">
@@ -34,13 +22,7 @@ function SvgComponent(props: SvgProps) {
           fill="#ECB55A"
         />
       </G>
-      <Mask
-        id="prefix__b"
-        x={126}
-        y={110}
-        width={416}
-        height={416}
-      >
+      <Mask id="prefix__b" x={126} y={110} width={416} height={416}>
         <Circle cx={334} cy={318} r={208} fill="#fff" />
       </Mask>
       <G mask="url(#prefix__b)">
@@ -53,7 +35,7 @@ function SvgComponent(props: SvgProps) {
         fill="#B87D43"
       />
     </Svg>
-  )
+  );
 }
 
-export default SvgComponent
+export default SvgComponent;

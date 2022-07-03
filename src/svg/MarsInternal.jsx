@@ -1,27 +1,26 @@
-import * as React from "react"
+import * as React from "react";
 import Svg, {
   SvgProps,
   Defs,
   Circle,
+  Path,
   G,
   Mask,
   Use,
-  Path,
-} from "react-native-svg"
+} from "react-native-svg";
 
-function SvgComponent(props: SvgProps) {
+function SvgComponent(props) {
   return (
-    <Svg
-      width={300}
-      height={300}
-      viewBox="0 0 336 336"
-      {...props}
-    >
+    <Svg width={300} height={300} viewBox="0 0 336 336" {...props}>
       <Defs>
         <Circle id="prefix__a" cx={168} cy={168} r={168} />
         <Circle id="prefix__c" cx={168} cy={168} r={168} />
         <Circle id="prefix__e" cx={168} cy={168} r={168} />
         <Circle id="prefix__g" cx={168} cy={168} r={168} />
+        <Path
+          id="prefix__i"
+          d="M0 0c88.918 0 161 72.082 161 161S88.918 322 0 322z"
+        />
       </Defs>
       <G fill="none" fillRule="evenodd">
         <Circle cx={168} cy={168} r={168} fill="#FF6A45" fillRule="nonzero" />
@@ -62,9 +61,43 @@ function SvgComponent(props: SvgProps) {
           opacity={0.078}
           d="M169-16h184v368H169z"
         />
+        <G transform="translate(169 7)">
+          <Mask id="prefix__j" fill="#fff">
+            <Use xlinkHref="#prefix__i" />
+          </Mask>
+          <Use fill="#97271E" xlinkHref="#prefix__i" />
+          <Circle
+            cx={1}
+            cy={161}
+            r={154}
+            fill="#DC5D1C"
+            mask="url(#prefix__j)"
+          />
+          <Circle
+            cx={1}
+            cy={161}
+            r={79}
+            fill="#F8A053"
+            mask="url(#prefix__j)"
+          />
+          <Circle
+            cx={1}
+            cy={161}
+            r={54}
+            fill="#FFCA79"
+            mask="url(#prefix__j)"
+          />
+          <Circle
+            cx={1}
+            cy={162}
+            r={40}
+            fill="#FFF5C6"
+            mask="url(#prefix__j)"
+          />
+        </G>
       </G>
     </Svg>
-  )
+  );
 }
 
-export default SvgComponent
+export default SvgComponent;

@@ -1,7 +1,7 @@
-import * as React from "react"
-import Svg, { SvgProps, Path } from "react-native-svg"
+import * as React from "react";
+import Svg, { SvgProps, Path } from "react-native-svg";
 
-function DrawerSvg(props: SvgProps) {
+function DrawerSvg(props) {
   return (
     <Svg width={24} height={17} {...props}>
       <Path
@@ -10,7 +10,7 @@ function DrawerSvg(props: SvgProps) {
         fillRule="evenodd"
       />
     </Svg>
-  )
+  );
 }
 
-export default DrawerSvg
+export default DrawerSvg;

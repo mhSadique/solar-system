@@ -1,28 +1,27 @@
-import * as React from "react"
+import * as React from "react";
 import Svg, {
   SvgProps,
   Defs,
   Circle,
+  Path,
   G,
   Mask,
   Use,
-  Path,
-} from "react-native-svg"
+} from "react-native-svg";
 
-function SvgComponent(props: SvgProps) {
+function SvgComponent(props) {
   return (
-    <Svg
-      width={300}
-      height={300}
-      viewBox="0 0 450 450"
-      {...props}
-    >
+    <Svg width={300} height={300} viewBox="0 0 450 450" {...props}>
       <Defs>
         <Circle id="prefix__a" cx={225} cy={225} r={225} />
         <Circle id="prefix__c" cx={225} cy={225} r={225} />
         <Circle id="prefix__e" cx={225} cy={225} r={225} />
         <Circle id="prefix__g" cx={225} cy={225} r={225} />
         <Circle id="prefix__i" cx={225} cy={225} r={225} />
+        <Path
+          id="prefix__k"
+          d="M0 0c120.398 0 218 97.602 218 218S120.398 436 0 436z"
+        />
       </Defs>
       <G fill="none" fillRule="evenodd">
         <Circle cx={225} cy={225} r={225} fill="#497EFA" fillRule="nonzero" />
@@ -74,9 +73,19 @@ function SvgComponent(props: SvgProps) {
           opacity={0.078}
           d="M225 11h215.354v428H225z"
         />
+        <G transform="translate(225 7)">
+          <Mask id="prefix__l" fill="#fff">
+            <Use xlinkHref="#prefix__k" />
+          </Mask>
+          <Use fill="#94D5FF" xlinkHref="#prefix__k" />
+          <Circle cy={218} r={211} fill="#2959C9" mask="url(#prefix__l)" />
+          <Circle cy={218} r={147} fill="#6593FF" mask="url(#prefix__l)" />
+          <Circle cy={218} r={82} fill="#4A7AE9" mask="url(#prefix__l)" />
+          <Circle cy={218} r={32} fill="#042570" mask="url(#prefix__l)" />
+        </G>
       </G>
     </Svg>
-  )
+  );
 }
 
-export default SvgComponent
+export default SvgComponent;

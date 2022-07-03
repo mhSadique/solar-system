@@ -1,13 +1,9 @@
-import * as React from "react"
-import Svg, { SvgProps, G, Circle } from "react-native-svg"
+import * as React from "react";
+import Svg, { SvgProps, G, Circle } from "react-native-svg";
 
-function SvgComponent(props: SvgProps) {
+function SvgComponent(props) {
   return (
-    <Svg
-      width={1532}
-      height={1291}
-      {...props}
-    >
+    <Svg width={1532} height={1291} {...props}>
       <G fill="#FFF" fillRule="evenodd" opacity={0.202}>
         <Circle cx={1155.5} cy={369.5} r={3.5} />
         <Circle cx={1145.5} cy={372.5} r={1.5} />
@@ -181,7 +177,7 @@ function SvgComponent(props: SvgProps) {
         <Circle cx={1003} cy={672} r={2} />
       </G>
     </Svg>
-  )
+  );
 }
 
-export default SvgComponent
+export default SvgComponent;

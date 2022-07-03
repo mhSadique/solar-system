@@ -1,7 +1,7 @@
-import * as React from "react"
-import Svg, { SvgProps, Path } from "react-native-svg"
+import * as React from "react";
+import Svg, { SvgProps, Path } from "react-native-svg";
 
-function SvgComponent(props: SvgProps) {
+function SvgComponent(props) {
   return (
     <Svg width={12} height={12} {...props}>
       <Path
@@ -10,7 +10,7 @@ function SvgComponent(props: SvgProps) {
         opacity={0.5}
       />
     </Svg>
-  )
+  );
 }
 
-export default SvgComponent
+export default SvgComponent;

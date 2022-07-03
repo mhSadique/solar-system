@@ -1,22 +1,17 @@
-import * as React from "react"
+import * as React from "react";
 import Svg, {
   SvgProps,
   Defs,
   Circle,
-  Path,
   G,
   Mask,
   Use,
-} from "react-native-svg"
+  Path,
+} from "react-native-svg";
 
-function SvgComponent(props: SvgProps) {
+function SvgComponent(props) {
   return (
-    <Svg
-      width={300}
-      height={300}
-      viewBox={"0 0 450 450"}
-      {...props}
-    >
+    <Svg width={300} height={300} viewBox="0 0 450 450" {...props}>
       <Defs>
         <Circle id="prefix__a" cx={225} cy={225} r={225} />
         <Circle id="prefix__c" cx={225} cy={225} r={225} />
@@ -24,10 +19,6 @@ function SvgComponent(props: SvgProps) {
         <Circle id="prefix__g" cx={225} cy={225} r={225} />
         <Circle id="prefix__i" cx={225} cy={225} r={225} />
         <Circle id="prefix__k" cx={225} cy={225} r={225} />
-        <Path
-          id="prefix__m"
-          d="M0 0c120.398 0 218 97.602 218 218S120.398 436 0 436z"
-        />
       </Defs>
       <G fill="none" fillRule="evenodd">
         <Circle cx={225} cy={225} r={225} fill="#545BFE" fillRule="nonzero" />
@@ -86,43 +77,9 @@ function SvgComponent(props: SvgProps) {
           opacity={0.078}
           d="M225.484-25h250.484v500H225.484z"
         />
-        <G transform="translate(225 7)">
-          <Mask id="prefix__n" fill="#fff">
-            <Use xlinkHref="#prefix__m" />
-          </Mask>
-          <Use fill="#2A2D80" xlinkHref="#prefix__m" />
-          <Circle
-            cx={1.5}
-            cy={219.5}
-            r={208.5}
-            fill="#952525"
-            mask="url(#prefix__n)"
-          />
-          <Circle
-            cx={2}
-            cy={218}
-            r={178}
-            fill="#E0592F"
-            mask="url(#prefix__n)"
-          />
-          <Circle
-            cx={2}
-            cy={218}
-            r={107}
-            fill="#F89035"
-            mask="url(#prefix__n)"
-          />
-          <Circle
-            cx={1}
-            cy={219}
-            r={51}
-            fill="#FFF1AA"
-            mask="url(#prefix__n)"
-          />
-        </G>
       </G>
     </Svg>
-  )
+  );
 }
 
-export default SvgComponent
+export default SvgComponent;

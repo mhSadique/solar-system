@@ -1,23 +1,11 @@
-import * as React from "react"
-import Svg, { SvgProps, Circle, Mask, G, Path } from "react-native-svg"
+import * as React from "react";
+import Svg, { SvgProps, Circle, Mask, G, Path } from "react-native-svg";
 
-function SvgComponent(props: SvgProps) {
+function SvgComponent(props) {
   return (
-    <Svg
-      width={300}
-      height={300}
-      viewBox="0 0 458 458"
-      fill="none"
-      {...props}
-    >
+    <Svg width={300} height={300} viewBox="0 0 458 458" fill="none" {...props}>
       <Circle cx={229} cy={229} r={229} fill="#65F0D5" />
-      <Mask
-        id="prefix__a"
-        x={0}
-        y={0}
-        width={458}
-        height={458}
-      >
+      <Mask id="prefix__a" x={0} y={0} width={458} height={458}>
         <Circle cx={229} cy={229} r={229} fill="#fff" />
       </Mask>
       <G mask="url(#prefix__a)">
@@ -28,13 +16,7 @@ function SvgComponent(props: SvgProps) {
           fill="#49CBC2"
         />
       </G>
-      <Mask
-        id="prefix__b"
-        x={0}
-        y={0}
-        width={458}
-        height={458}
-      >
+      <Mask id="prefix__b" x={0} y={0} width={458} height={458}>
         <Circle cx={229} cy={229} r={229} fill="#fff" />
       </Mask>
       <G mask="url(#prefix__b)">
@@ -45,13 +27,7 @@ function SvgComponent(props: SvgProps) {
           fill="#50DECD"
         />
       </G>
-      <Mask
-        id="prefix__c"
-        x={0}
-        y={0}
-        width={458}
-        height={458}
-      >
+      <Mask id="prefix__c" x={0} y={0} width={458} height={458}>
         <Circle cx={229} cy={229} r={229} fill="#fff" />
       </Mask>
       <G mask="url(#prefix__c)">
@@ -62,44 +38,14 @@ function SvgComponent(props: SvgProps) {
           fill="#77FFF5"
         />
       </G>
-      <Mask
-        id="prefix__d"
-        x={0}
-        y={0}
-        width={458}
-        height={458}
-      >
+      <Mask id="prefix__d" x={0} y={0} width={458} height={458}>
         <Circle cx={229} cy={229} r={229} fill="#fff" />
       </Mask>
       <G mask="url(#prefix__d)">
         <Path opacity={0.078} fill="#000" d="M229 0h229v458H229z" />
       </G>
-      <Path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M229 450c122.055 0 221-98.945 221-221S351.055 8 229 8v442z"
-        fill="#138B83"
-      />
-      <Mask
-        id="prefix__e"
-        x={229}
-        y={8}
-        width={221}
-        height={442}
-      >
-        <Path
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M229 450c122.055 0 221-98.945 221-221S351.055 8 229 8v442z"
-          fill="#fff"
-        />
-      </Mask>
-      <G mask="url(#prefix__e)">
-        <Circle cx={230} cy={229} r={145} fill="#1BB9AE" />
-        <Circle cx={228.5} cy={229.5} r={32.5} fill="#06504C" />
-      </G>
     </Svg>
-  )
+  );
 }
 
-export default SvgComponent
+export default SvgComponent;

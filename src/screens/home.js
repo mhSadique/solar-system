@@ -8,6 +8,20 @@ import { spacing } from "../theme/spacing";
 import { AntDesign } from '@expo/vector-icons';
 
 const Home = ({ navigation }) => {
+
+    const renderItem = ({ item, index }) => (
+        <Pressable
+            onPress={() => navigation.navigate('Details', { planetIndex: index })}
+            style={styles.item}
+        >
+            <View style={styles.imageTextContainer}>
+                <View style={[styles.circle, { backgroundColor: item.color }]} />
+                <Text preset="h3" style={styles.itemName}>{item.name}</Text>
+            </View>
+            <AntDesign name="right" size={24} color={colors.white} />
+        </Pressable>
+    );
+
     return (
         <SafeAreaView style={styles.container}>
             <PlanetHeader />
@@ -16,18 +30,7 @@ const Home = ({ navigation }) => {
                 contentContainerStyle={styles.list}
                 data={PLANET_LIST}
                 keyExtractor={item => item.name}
-                renderItem={({ item, index }) => (
-                    <Pressable
-                        onPress={() => navigation.navigate('Details', { planetIndex: index })}
-                        style={styles.item}
-                    >
-                        <View style={styles.imageTextContainer}>
-                            <View style={[styles.circle, { backgroundColor: item.color }]} />
-                            <Text preset="h3" style={styles.itemName}>{item.name}</Text>
-                        </View>
-                        <AntDesign name="right" size={24} color={colors.white} />
-                    </Pressable>
-                )}
+                renderItem={renderItem}
             />
         </SafeAreaView>
     );
