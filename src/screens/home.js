@@ -1,4 +1,4 @@
-import { Button, StyleSheet, FlatList, View, Pressable } from "react-native";
+import { Button, StyleSheet, FlatList, View, Pressable, TextInput } from "react-native";
 import PlanetHeader from "../components/planet-header";
 import Text from "../components/text/text";
 import { SafeAreaView } from 'react-native-safe-area-context'
@@ -6,8 +6,11 @@ import { colors } from "../theme/colors";
 import { PLANET_LIST } from "../data/planet-data";
 import { spacing } from "../theme/spacing";
 import { AntDesign } from '@expo/vector-icons';
+import { useState } from "react";
 
 const Home = ({ navigation }) => {
+
+    const [planets, setPlanets] = useState(PLANET_LIST);
 
     const renderItem = ({ item, index }) => (
         <Pressable
@@ -22,13 +25,26 @@ const Home = ({ navigation }) => {
         </Pressable>
     );
 
+    const searchFilter = (text) => {
+        const filteredLit = PLANET_LIST.filter(planet => planet.name.startsWith(text.toLowerCase()));
+        setPlanets(filteredLit);
+    };
+
     return (
         <SafeAreaView style={styles.container}>
             <PlanetHeader />
+            <TextInput
+                onChangeText={(text) => searchFilter(text)}
+                placeholder="Type the planet name"
+                placeholderTextColor={colors.white}
+                autoCorrect={false}
+                style={styles.searchInput}
+            />
             <FlatList
                 ItemSeparatorComponent={() => <View style={styles.separator} />}
                 contentContainerStyle={styles.list}
-                data={PLANET_LIST}
+                data={planets}
+                // data={PLANET_LIST}
                 keyExtractor={item => item.name}
                 renderItem={renderItem}
             />
@@ -66,6 +82,13 @@ const styles = StyleSheet.create({
         width: 20,
         height: 20,
         borderRadius: 10
+    },
+    searchInput: {
+        padding: spacing[5],
+        color: colors.white,
+        borderBottomColor: colors.white,
+        borderBottomWidth: 1,
+        margin: spacing[6]
     }
 })
 
